@@ -1,0 +1,11 @@
+[2026-03-10 16:11:27] [INFO] Teltonika FMM640 GPS Server başladılır...
+[2026-03-10 16:11:27] [INFO] Dinlənir: 0.0.0.0:5000
+[2026-03-10 16:11:27] [INFO] Log fayl: /home/lava.com.az/public_html/gps/logs/gps_data.log
+[2026-03-10 16:11:27] [INFO] Server hazırdır. Bağlantı gözlənilir...
+[2026-03-10 16:16:31] [INFO] Gələn bağlantı: 5.191.106.131
+[2026-03-10 16:16:31] [INFO] Yeni bağlantı: 5.191.106.131
+[2026-03-10 16:16:32] [INFO] IMEI qəbul edildi: 860536049302096 (IP: 5.191.106.131)
+[2026-03-10 16:16:34] [INFO] Qəbul edildi: IMEI=860536049302096 | Codec=0x8 | Qeyd sayı=1
+[2026-03-10 16:16:34] [GPS] IMEI=860536049302096 | RecordTime=2026-03-10 16:16:24 | Lat=40.380132 | Lng=49.878009 | Alt=0m | Angle=0° | Speed=0km/h | Sats=0 | IO[22]=0 | IO[71]=2 | IO[240]=0 | IO[21]=5 | IO[200]=0 | IO[239]=0 | IO[67]=9625 | IO[68]=54 | IO[181]=0 | IO[182]=0 | IO[66]=11585 | IO[24]=0 | IO[201]=65532
+[2026-03-10 16:17:07] [INFO] Bağlantı kəsildi: IMEI=860536049302096
+[2026-03-10 16:17:07] [INFO] Bağlantı bağlandı: IMEI=860536049302096
