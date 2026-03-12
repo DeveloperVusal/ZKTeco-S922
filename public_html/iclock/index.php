@@ -23,13 +23,30 @@ $rawData  = file_get_contents("php://input");
 
 $logFile = __DIR__ . "/log.txt";
 
-// 1) getrequest
+// 1) getrequest GET - heartbeat, just OK
 if (strpos($path, "/iclock/getrequest") !== false) {
+    header('Content-Type: text/plain');
     echo "OK";
     exit;
 }
 
-// 2) cdata
+// 2) cdata GET - registration device
+if (strpos($path, "/iclock/cdata") !== false && $method === "GET") {
+    header('Content-Type: text/plain');
+    echo "GET OK\n";
+    echo "ATTLOGStamp=9999\n";
+    echo "OPERLOGStamp=9999\n";
+    echo "ErrorDelay=60\n";
+    echo "Delay=10\n";
+    echo "TransTimes=00:00;14:00\n";
+    echo "TransInterval=3\n";
+    echo "TransFlag=TransData AttLog OpLog\n";
+    echo "Realtime=0\n";
+    echo "Encrypt=0\n";
+    exit;
+}
+
+// 3) cdata POST - receiving data
 if (strpos($path, "/iclock/cdata") !== false && $method === "POST") {
 
     // ---- log.txt-ə yaz (debug) ----
@@ -97,6 +114,7 @@ if (strpos($path, "/iclock/cdata") !== false && $method === "POST") {
         $stmt->execute([$deviceSN, $dt, $userId, $col1, $col2, $col3, $col4, $col5, $col6, $col7, $col8, $line]);
     }
 
+    header('Content-Type: text/plain');
     echo "OK";
     exit;
 }
