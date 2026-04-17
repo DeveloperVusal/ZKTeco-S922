@@ -1,11 +1,13 @@
 <?php
 /**
  * Teltonika FMM640 GPS Data Reader - TCP Server
- * Codec 8 / Codec 8 Extended / Codec 16 protokollarını dəstəkləyir
- * 
+ * MySQL + pcntl_fork (до 15 трекеров одновременно)
+ *
  * İstifadə: php teltonika_fmm640_server.php
- * Port: 5000 (aşağıda dəyişdirmək olar)
+ * Port: 5000
  */
+
+// ─── KONFIQURASIYA ────────────────────────────────────────────────────────────
 
 define('SERVER_HOST', '0.0.0.0');
 define('SERVER_PORT', 5000);
@@ -115,7 +117,7 @@ function getGpsIdByImei(PDO $pdo, string $imei): ?int
     );
     $stmt->execute([
         ':imei'        => $imei,
-        ':key'         => 'auto_' . $imei,
+        ':key'         => $imei,
         ':description' => 'Auto registered',
     ]);
 
